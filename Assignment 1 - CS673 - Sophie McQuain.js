@@ -9,9 +9,17 @@ function printHelloWorld() {
 // Question 3
 function multiplicationTable() {
   for (var i = 1; i < 13; i++) {
-    var line = [];
+    var line = "";
     for(var w = 1; w<13; w++) {
-      line.push(i*w)
+      if (i*w%100 !== i*w) {
+          line += (i*w+" ");
+      }
+      else if(i*w%10 == i*w) {
+        line += (i*w+"   ");
+      }
+      else {
+          line += (i*w+"  ");
+      }
     }
     console.log(line);
   }
@@ -46,7 +54,7 @@ function firstHundredFibonacci() {
   while(f.length<=100) {
     f.push(f[f.length - 1] + f[f.length - 2]);
   }
-  console.log(f);
+  console.log(JSON.stringify(f));
 }
 
 // Question 7
